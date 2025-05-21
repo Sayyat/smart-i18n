@@ -14,7 +14,6 @@ This file structure is organized into **`lib/`** for reusable utilities and **`t
 smart-i18n/
 ├── lib/
 │   ├── config.js                   // Script to parse i18next.config.json and share default configs
-│   ├── feature.js                  // Logic for the create-feature Gulp task to generate new features
 │   ├── flush.js                    // Custom logic for flushing or resetting translation keys
 │   ├── i18n.js                     // Exports async getI18n function for initializing i18next
 │   ├── language.js                 // Parses src/i18n/lib/config.ts for languages and fallback language
@@ -25,7 +24,6 @@ smart-i18n/
 │   └── type.js                     // Handles type generation logic for translation keys
 ├── src/                            // Optional test folder for local development
 ├── tasks/
-│   ├── create-feature.js           // Gulp task for generating boilerplate code for a new feature
 │   ├── generate-namespaces.js      // Gulp task to generate namespaces based on translation keys
 │   ├── generate-templates.js       // Task to extract translation keys and update language files
 │   ├── generate-translations.js    // Task to fetch translations for missing keys from RapidAPI
@@ -48,7 +46,6 @@ smart-i18n/
 Reusable logic shared between all Gulp tasks:
 
 - **config.js** — Loads and parses `i18next.config.json`.
-- **feature.js** — Logic for creating a new feature folder with initial boilerplate.
 - **flush.js** — Custom logic to clear/reset translations.
 - **i18n.js** — Initializes i18next instance for internal use.
 - **language.js** — Parses TS config to detect supported languages and fallback.
@@ -66,7 +63,6 @@ Each file is a self-contained Gulp task:
 - **generate-templates.js** — Extracts and updates translation keys in locale files.
 - **generate-translations.js** — Requests missing translations from RapidAPI.
 - **generate-types.js** — Converts extracted keys into a types.d.ts file.
-- **create-feature.js** — Generates new feature folder boilerplate.
 - **watch.js** — Watches for changes and triggers translation-related tasks.
 - **help.js** — Outputs list of all CLI tasks and usage.
 - **init.js** — Initializes config files (`i18next.config.json`, `.demo-env`) in a consumer project.
@@ -83,7 +79,6 @@ Each task can be run via CLI using the `smart-i18n` binary:
   smart-i18n generate-types
   smart-i18n generate-translations -l ru
   smart-i18n watch
-  smart-i18n create-feature -n my-feature
 ```
 
 For full task details, run:

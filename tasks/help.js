@@ -71,37 +71,6 @@ export default function helpTask(gulp) {
       `    Runs ${chalk.yellow("generate-namespaces")} -> ${chalk.yellow("generate-templates")} -> ${chalk.yellow("generate-types")} on file changes`,
     );
 
-    // gulp create-feature
-    console.log(
-      chalk.green("\n  smart-i18n create-feature") +
-        chalk.yellow(" [-n, --name <feature-name>]") +
-        chalk.yellow(" [--js]"),
-    );
-    console.log("    Generates boilerplate for a new feature");
-    console.log("    Parameters:");
-    console.log(
-      "      " +
-        chalk.yellow("-n, --name") +
-        " - Name for new feature (in camelCase or kebab-case)",
-    );
-    console.log(
-      "      " +
-        chalk.yellow("    --js  ") +
-        " - Generate JavaScript/JSX instead of TypeScript/TSX. (Default: false)",
-    );
-
-    console.log("    Examples:");
-    console.log("      " + chalk.green("smart-i18n create-feature -n my-feature"));
-    console.log(
-      "      - Generates feature named 'my-feature' with TypeScript/TSX files",
-    );
-    console.log(
-      "      " + chalk.green("smart-i18n create-feature -n my-feature --js"),
-    );
-    console.log(
-      "      - Generates feature named 'my-feature' with JavaScript/JSX files",
-    );
-
     console.log(chalk.green("\n  smart-i18n help"));
     console.log("    Displays this help information");
 
@@ -130,11 +99,6 @@ export default function helpTask(gulp) {
       "  5. Run " +
         chalk.green("smart-i18n watch") +
         " to run generate-namespaces -> generate-templates -> generate-types on file changes",
-    );
-    console.log(
-      "  6. Run " +
-        chalk.green("smart-i18n create-feature") +
-        " to generate boilerplate for a new feature",
     );
 
     console.log(chalk.cyan("\nConfiguration:"));
