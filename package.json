@@ -33,8 +33,6 @@
     "gulp": "^4.0.0",
     "gulp-if": "^3.0.0",
     "gulp-sort": "^2.0.0",
-    "gulp-typescript": "^6.0.0-alpha.1",
-    "i18next": "^25.0.2",
     "i18next-scanner": "^4.6.0",
     "minimatch": "^10.0.1",
     "node-fetch": "^3.3.2",
