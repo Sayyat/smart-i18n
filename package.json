@@ -1,0 +1,45 @@
+{
+  "name": "@sayyyat/smart-i18n",
+  "version": "1.0.2",
+  "description": "Reusable Gulp-based i18n automation system for javascript/typescript projects.",
+  "smart-i18n-library": true,
+  "main": "gulpfile.mjs",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./gulpfile.js"
+    }
+  },
+  "bin": {
+    "smart-i18n": "./bin/smart-i18n.mjs"
+  },
+  "keywords": [
+    "i18n",
+    "nextjs",
+    "gulp",
+    "translation",
+    "automation"
+  ],
+  "author": "Sayat Raykul",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "eol": "^0.10.0",
+    "glob": "^11.0.2",
+    "gulp": "^4.0.0",
+    "gulp-if": "^3.0.0",
+    "gulp-sort": "^2.0.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "i18next": "^25.0.2",
+    "i18next-scanner": "^4.6.0",
+    "minimatch": "^10.0.1",
+    "node-fetch": "^3.3.2",
+    "ts-morph": "^25.0.1",
+    "vinyl": "^3.0.0",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "dotenv": "^16.5.0"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+}
