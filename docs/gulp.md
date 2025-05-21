@@ -78,18 +78,18 @@ Each file is a self-contained Gulp task:
 Each task can be run via CLI using the `smart-i18n` binary:
 
 ```bash
-smart-i18n generate-namespaces
-smart-i18n generate-templates
-smart-i18n generate-types
-smart-i18n generate-translations -l ru
-smart-i18n watch
-smart-i18n create-feature -n my-feature
+  smart-i18n generate-namespaces
+  smart-i18n generate-templates
+  smart-i18n generate-types
+  smart-i18n generate-translations -l ru
+  smart-i18n watch
+  smart-i18n create-feature -n my-feature
 ```
 
 For full task details, run:
 
 ```bash
-smart-i18n help
+  smart-i18n help
 ```
 
 These scripts make i18n workflows reproducible, automated, and framework-agnostic. You can easily integrate them with **Next.js**, **React**, **Vue**, or any TypeScript/JavaScript project.

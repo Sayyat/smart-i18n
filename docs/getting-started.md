@@ -68,8 +68,6 @@ The Smart-i18n system is a comprehensive internationalization (i18n) toolkit tha
     * Avoids data loss by preserving old translations.
     * Ensures the safe addition of new translations without removing existing ones.
 
-> **Note**: See [translation](./translation.md) section for more information about the translation keys and organization.
-
 ### 4. **`smart-i18n generate-types`**
 
 * Generates TypeScript types for your translations.
@@ -99,8 +97,6 @@ The Smart-i18n system is a comprehensive internationalization (i18n) toolkit tha
     * Source files (e.g., JSX/TSX files in the codebase).
     * Translation files in `src/i18n/locales`.
 
-> ![Watch](../public/assets/watch-log.png)
-
 ### 7. **`smart-i18n create-feature [-n, --name <feature-name>] [--js]`**
 
 * Generates boilerplate for a new feature in your application.
@@ -113,13 +109,9 @@ The Smart-i18n system is a comprehensive internationalization (i18n) toolkit tha
     * `smart-i18n create-feature -n new-feature` - Generates a new feature with TypeScript/TSX files.
     * `smart-i18n create-feature -n new-feature --js` - Generates the feature with JavaScript/JSX files.
 
-> ![Create feature task output](../public/assets/create-feature-log.png)
-
 ### 8. **`smart-i18n help`**
 
 * Displays the available tasks and their descriptions.
-
-> ![Help](../public/assets/help-log.png)
 
 ---
 
