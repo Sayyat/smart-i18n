@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/@sayyyat/smart-i18n)](https://www.npmjs.com/package/@sayyyat/smart-i18n)
 [![npm downloads](https://img.shields.io/npm/dm/@sayyyat/smart-i18n)](https://www.npmjs.com/package/@sayyyat/smart-i18n)
 [![License](https://img.shields.io/npm/l/@sayyyat/smart-i18n)](./LICENSE)
-[![Node.js CI](https://img.shields.io/github/actions/workflow/status/Sayyat/smart-i18n/ci.yml?branch=main)](https://github.com/Sayyat/smart-i18n/actions)
+[![Node.js CI](https://img.shields.io/github/actions/workflow/status/Sayyat/smart-i18n/npm-publish.yml?branch=main)](https://github.com/Sayyat/smart-i18n/actions)
 
 > A Gulp-based CLI toolkit for modular, scalable i18n in JS/TS projects
 
