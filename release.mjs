@@ -5,6 +5,12 @@ import fs from "fs";
 const pkg = JSON.parse(fs.readFileSync("./package.json", "utf8"));
 const version = pkg.version;
 
+const status = execSync("git status --porcelain").toString().trim();
+if (status) {
+    console.error("❌ Git working directory not clean. Commit your changes first.");
+    process.exit(1);
+}
+
 // Step 1: Clean existing tag if exists
 try {
     execSync(`git tag -d v${version}`, { stdio: "inherit" });
