@@ -13,6 +13,10 @@
   "bin": {
     "smart-i18n": "./bin/smart-i18n.mjs"
   },
+  "scripts": {
+    "test": "echo \"No tests yet.\"",
+    "release": "npm version patch && git push && git push --tags && gh release create v$(node -p \"require('./package.json').version\") --generate-notes"
+  },
   "keywords": [
     "i18n",
     "nextjs",
