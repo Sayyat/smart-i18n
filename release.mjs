@@ -20,7 +20,8 @@ try {
 }
 
 // Step 2: Bump version
-execSync("npm version patch", { stdio: "inherit" });
+const type = process.argv[2] || "patch";
+execSync(`npm version ${type}`, { stdio: "inherit" });
 const newVersion = JSON.parse(fs.readFileSync("./package.json", "utf8")).version;
 
 // Step 3: Push commits and tags
