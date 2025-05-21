@@ -15,7 +15,7 @@
   },
   "scripts": {
     "test": "echo \"No tests yet.\"",
-    "release": "git tag -d v$(node -p \"require('./package.json').version\") 2>/dev/null || true && npm version patch && git push && git push --tags && gh release create v$(node -p \"require('./package.json').version\") --generate-notes --latest"
+    "release": "node release.mjs"
   },
   "keywords": [
     "i18n",
