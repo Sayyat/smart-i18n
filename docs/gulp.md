@@ -14,6 +14,7 @@ This file structure is organized into **`lib/`** for reusable utilities and **`t
 smart-i18n/
 ├── lib/
 │   ├── config.js                   // Script to parse i18next.config.json and share default configs
+│   ├── copy.js                     // Copy related helper functions
 │   ├── flush.js                    // Custom logic for flushing or resetting translation keys
 │   ├── i18n.js                     // Exports async getI18n function for initializing i18next
 │   ├── language.js                 // Parses src/i18n/lib/config.ts for languages and fallback language
@@ -65,7 +66,7 @@ Each file is a self-contained Gulp task:
 - **generate-types.js** — Converts extracted keys into a types.d.ts file.
 - **watch.js** — Watches for changes and triggers translation-related tasks.
 - **help.js** — Outputs list of all CLI tasks and usage.
-- **init.js** — Initializes config files (`i18next.config.json`, `.demo-env`) in a consumer project.
+- **copy.js** — Initializes config files (`i18next.config.json`, `.demo-env`) in a consumer project.
 
 ---
 
