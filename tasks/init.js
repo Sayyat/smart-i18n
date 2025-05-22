@@ -1,5 +1,5 @@
-import {copyBaseInitFiles} from "../lib/copy.js";
+import {init} from "../lib/init.js";
 
 export default function initTask(gulpInstance) {
-    gulpInstance.task("init", copyBaseInitFiles);
+    gulpInstance.task("init", init);
 }

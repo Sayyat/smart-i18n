@@ -17,6 +17,7 @@ smart-i18n/
 │   ├── copy.js                     // Copy related helper functions
 │   ├── flush.js                    // Custom logic for flushing or resetting translation keys
 │   ├── i18n.js                     // Exports async getI18n function for initializing i18next
+│   ├── init.js                     // Project initialization
 │   ├── language.js                 // Parses src/i18n/lib/config.ts for languages and fallback language
 │   ├── namespaces.js               // Generates namespaces based on translation keys
 │   ├── paths.js                    // Exports utility functions like getConsumerRoot and getPathFromConsumerRoot

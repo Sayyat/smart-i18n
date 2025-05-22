@@ -9,9 +9,22 @@ import { getI18n } from "../lib/i18n.js";
 export default function helpTask(gulp) {
   gulp.task("help", async function (done) {
     const i18n = await getI18n();
-    console.log(chalk.bold("\ni18n Translation System Help\n"));
+    console.log(chalk.bold("\nsmart-i18n Help\n"));
 
     console.log(chalk.cyan("Available Tasks:"));
+
+    // gulp init
+    console.log(chalk.green("\n  smart-i18n init"));
+    console.log("    Copies base i18n setup files into your project");
+    console.log("    Files:");
+    console.log("      - " + chalk.yellow("./i18next.config.json"));
+    console.log("      - " + chalk.yellow("./.demo-env"));
+    console.log("    Note:");
+    console.log(
+        "      This will also copy the default " +
+        chalk.yellow("src/i18n/") +
+        " folder structure if available"
+    );
 
     // gulp
     console.log(chalk.green("  smart-i18n"));
