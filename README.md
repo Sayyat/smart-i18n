@@ -87,4 +87,4 @@ Looking for a working example? Check out:
 
 ## ⚖️ License
 
-MIT © Sayat Raykul
+[MIT](LICENSE) © Sayat Raykul
