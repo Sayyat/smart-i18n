@@ -27,7 +27,7 @@ export default function helpTask(gulp) {
     );
 
     // gulp
-    console.log(chalk.green("  smart-i18n"));
+    console.log(chalk.green("\n  smart-i18n"));
     console.log("    Run the default task sequence");
     console.log(
       `    ${chalk.yellow("generate-namespaces")} -> ${chalk.yellow("generate-templates")} -> ${chalk.yellow("generate-types")}`,
@@ -90,26 +90,31 @@ export default function helpTask(gulp) {
     console.log(chalk.cyan("\nWorkflow:"));
     console.log(
       "  1. Run " +
+        chalk.green("smart-i18n init") +
+        " initialize your project to use smart-i18n",
+    );
+    console.log(
+      "  2. Run " +
         chalk.green("smart-i18n generate-namespaces") +
         " to update namespace definitions",
     );
     console.log(
-      "  2. Run " +
+      "  3. Run " +
         chalk.green("smart-i18n generate-templates") +
         " to extract translation keys",
     );
     console.log(
-      "  3. Run " +
+      "  4. Run " +
         chalk.green("smart-i18n generate-types") +
         " to update TypeScript types",
     );
     console.log(
-      "  4. Run " +
+      "  5. Run " +
         chalk.green("smart-i18n generate-translations") +
         " to translate missing keys",
     );
     console.log(
-      "  5. Run " +
+      "  6. Run " +
         chalk.green("smart-i18n watch") +
         " to run generate-namespaces -> generate-templates -> generate-types on file changes",
     );
