@@ -8,7 +8,8 @@
   "exports": {
     ".": {
       "default": "./gulpfile.js"
-    }
+    },
+    "./lib": "./lib/index.js"
   },
   "bin": {
     "smart-i18n": "./bin/smart-i18n.mjs"
