@@ -8,3 +8,8 @@
 !.demo-env
 !README.md
 !package.json
+
+.github/
+.idea/
+docs/
+public/
