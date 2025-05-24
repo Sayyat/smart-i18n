@@ -2,13 +2,13 @@
 !lib/
 !tasks/
 !bin/
-!docs/
 !gulpfile.js
 !i18next.config.json
 !.demo-env
 !README.md
 !package.json
 
+# Disallow these folders and files
 .github/
 .idea/
 docs/
