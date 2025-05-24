@@ -14,6 +14,16 @@
   "bin": {
     "smart-i18n": "./bin/smart-i18n.mjs"
   },
+  "files": [
+    "bin/",
+    "lib/",
+    "src/",
+    "tasks/",
+    ".demo-env",
+    "gulpfile.js",
+    "i18next.config.json",
+    "README.md"
+  ],
   "scripts": {
     "test": "echo \"No tests yet.\"",
     "release": "node release.mjs"
