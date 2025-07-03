@@ -1,7 +1,6 @@
 /*
  * Copyright (c) 2025. Sayat Raykul
  */
-
 import { generateTypes } from "../lib/type.js";
 
 export default function generateTypesTask(gulp) {

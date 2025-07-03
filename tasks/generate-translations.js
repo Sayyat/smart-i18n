@@ -1,7 +1,6 @@
 /*
  * Copyright (c) 2025. Sayat Raykul
  */
-
 import { translate } from "../lib/translation.js";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";

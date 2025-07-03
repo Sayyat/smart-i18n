@@ -1,7 +1,6 @@
 /*
  * Copyright (c) 2025. Sayat Raykul
  */
-
 import chalk from "chalk";
 import { CONFIG_FILE_NAME, configs } from "../lib/config.js";
 import { getI18n } from "../lib/i18n.js";

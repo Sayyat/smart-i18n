@@ -1,18 +1,15 @@
 /*
  * Copyright (c) 2025. Sayat Raykul
  */
-
-// scripts/tasks/generate-templates.js
-
 import scanner from "i18next-scanner";
 import { getI18n } from "../lib/i18n.js";
 import { createCustomTransform } from "../lib/transform.js";
-import { customFlush } from "../lib/flush.js"; // ⚠️ новая функция
+import { customFlush } from "../lib/flush.js";
 
 export default function generateTemplates(gulp) {
   gulp.task("generate-templates", async function () {
     const i18n = await getI18n();
-    const transform = await createCustomTransform(); // 🔄 получаем sync-функцию
+    const transform = await createCustomTransform();
 
     return new Promise((resolve, reject) => {
       gulp

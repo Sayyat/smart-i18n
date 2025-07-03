@@ -1,8 +1,6 @@
 /*
  * Copyright (c) 2025. Sayat Raykul
  */
-
-// scripts/utils/transform.js
 import chalk from "chalk";
 import path from "path";
 import {
