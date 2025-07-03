@@ -22,54 +22,6 @@ Smart-i18n is a framework-agnostic internationalization (i18n) CLI toolkit that 
 
 ---
 
-## 📦 Installation
-
-In your project root:
-
-```bash
-yarn add -D smart-i18n
-yarn smart-i18n init
-```
-
-This will install the package and create the following files if they don’t exist:
-
-* `i18next.config.json` — main config file
-* `.demo-env` — environment file with placeholder API key for translations
-
----
-
-## 🛠️ Usage
-
-After install, run tasks directly using `yarn` or `npx`:
-
-```bash
-yarn smart-i18n generate-namespaces
-yarn smart-i18n generate-templates
-yarn smart-i18n generate-types
-yarn smart-i18n generate-translations -l ru
-```
-
-Or simply run all default tasks:
-
-```bash
-yarn smart-i18n
-```
-
-Available tasks:
-
-| Command                             | Description                                                          |
-| ----------------------------------- | -------------------------------------------------------------------- |
-| `smart-i18n`                        | Runs `generate-namespaces` → `generate-templates` → `generate-types` |
-| `smart-i18n generate-namespaces`    | Builds translation namespace map from file structure                 |
-| `smart-i18n generate-templates`     | Extracts new keys, updates locale JSON files                         |
-| `smart-i18n generate-types`         | Generates `types.d.ts` for i18n keys                                 |
-| `smart-i18n generate-translations`  | Fills missing keys via Deep Translate API                            |
-| `smart-i18n watch`                  | Watches files and regenerates as needed                              |
-| `smart-i18n create-feature -n name` | Scaffold a new feature folder with boilerplate                       |
-| `smart-i18n help`                   | Shows all commands and usage info                                    |
-
----
-
 ## 📁 Documentation
 
 * 📚 [Getting Started Guide](./docs/getting-started.md) — project setup and concepts
