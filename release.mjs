@@ -60,7 +60,7 @@ if (spawnSync("gh", ["auth", "status"], { stdio: "ignore" }).status !== 0 && !gh
 
 // 4) Обновляем версию (npm version: создаст коммит и тег vX.Y.Z)
 // чтобы npm не генерил package-lock, держи в проекте .npmrc с `package-lock=false`
-run("npm", ["version", versionType, "-m", "chore(release): v%s"]);
+run("npm", ["version", versionType]); // создаст коммит с дефолтным сообщением "vX.Y.Z" и тег vX.Y.Z
 
 const newVersion = JSON.parse(fs.readFileSync("./package.json", "utf8")).version;
 const newTag = `v${newVersion}`;
