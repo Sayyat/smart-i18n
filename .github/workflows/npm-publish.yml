@@ -13,29 +13,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          # не используем cache: yarn, чтобы setup-node не дергал Yarn 1
-
-      - name: Enable Corepack & Yarn 4
-        run: |
-          corepack enable
-          corepack prepare yarn@4.10.3 --activate
-          yarn -v
-
-      - name: Cache yarn files
-        uses: actions/cache@v4
+      - run: corepack enable
+      - run: corepack prepare yarn@4.10.3 --activate
+      - run: yarn -v
+      - uses: actions/cache@v4
         with:
           path: |
             ~/.cache/yarn
             .yarn/cache
           key: yarn-${{ hashFiles('**/yarn.lock') }}
-
-      - name: Install deps
-        run: yarn install --immutable
-
+      - run: yarn install --immutable
       - run: yarn test
 
   publish-npm:
@@ -45,30 +35,28 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          # не используем cache: yarn, чтобы setup-node не дергал Yarn 1
-
-      - name: Enable Corepack & Yarn 4
-        run: |
-          corepack enable
-          corepack prepare yarn@4.10.3 --activate
-          yarn -v
-
-      - name: Cache yarn files
-        uses: actions/cache@v4
+          registry-url: https://registry.npmjs.org/   # важно!
+          always-auth: true
+      - run: corepack enable
+      - run: corepack prepare yarn@4.10.3 --activate
+      - run: yarn -v
+      - uses: actions/cache@v4
         with:
           path: |
             ~/.cache/yarn
             .yarn/cache
           key: yarn-${{ hashFiles('**/yarn.lock') }}
+      - run: yarn install --immutable
 
-      - name: Install deps
-        run: yarn install --immutable
-
-      # Рекомендуемая команда публикации в Yarn 4
-      - run: yarn npm publish --access public --tolerate-republish
+      - name: Authenticate to npm
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
+          npm whoami || true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+
+      - name: Publish
+        run: yarn npm publish --access public --tolerate-republish
