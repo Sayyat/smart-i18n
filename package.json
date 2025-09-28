@@ -2,11 +2,11 @@
   "name": "@sayyyat/smart-i18n",
   "version": "2.1.6",
   "description": "Reusable Gulp-based i18n automation system for javascript/typescript projects.",
-  "main": "gulpfile.mjs",
+  "main": "./gulpfile.mjs",
   "type": "module",
   "exports": {
     ".": {
-      "default": "./gulpfile.js"
+      "default": "./gulpfile.mjs"
     },
     "./lib": "./lib/index.js"
   },
@@ -22,8 +22,8 @@
     "README.md"
   ],
   "scripts": {
-    "test": "echo \"No tests yet.\"",
-    "release": "node release.mjs"
+    "test": "node -e \"console.log('No tests yet.')\"",
+    "release": "node ./release.mjs"
   },
   "keywords": [
     "i18n",
