@@ -2,7 +2,7 @@
   "configFilePath": "src/i18n/lib/config.ts",
   "localesDirectory": "src/i18n/locales",
   "generatedNamespacesPath": "src/i18n/generated/namespaces.ts",
-  "generatedTypesPath": "src/i18n/generated/types.d.ts",
+  "generatedTypesPath": "src/i18n/generated/types.ts",
   "keepUnusedKeys": true,
   "includePatterns": [
     "src/app/**/*.{jsx,tsx}",
