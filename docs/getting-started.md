@@ -71,7 +71,7 @@ The Smart-i18n system is a comprehensive internationalization (i18n) toolkit tha
 ### 4. **`smart-i18n generate-types`**
 
 * Generates TypeScript types for your translations.
-* **Output**: `src/i18n/generated/types.d.ts`
+* **Output**: `src/i18n/generated/types.ts`
 
 ### 5. **`smart-i18n generate-translations [-l, --lang <language>]`**
 
@@ -147,7 +147,7 @@ This is the configuration file used by the **Next-i18n-auth** system to define h
   "generatedNamespacesPath": "src/i18n/generated/namespaces.ts",
 
   // Path for generated TypeScript types
-  "generatedTypesPath": "src/i18n/generated/types.d.ts",
+  "generatedTypesPath": "src/i18n/generated/types.ts",
 
   // Whether to preserve or remove unused keys
   "keepUnusedKeys": true,

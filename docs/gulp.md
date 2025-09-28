@@ -64,7 +64,7 @@ Each file is a self-contained Gulp task:
 - **generate-namespaces.js** — Builds a map of translation namespaces.
 - **generate-templates.js** — Extracts and updates translation keys in locale files.
 - **generate-translations.js** — Requests missing translations from RapidAPI.
-- **generate-types.js** — Converts extracted keys into a types.d.ts file.
+- **generate-types.js** — Converts extracted keys into a types.ts file.
 - **watch.js** — Watches for changes and triggers translation-related tasks.
 - **help.js** — Outputs list of all CLI tasks and usage.
 - **copy.js** — Initializes config files (`i18next.config.json`, `.demo-env`) in a consumer project.
