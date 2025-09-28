@@ -42,8 +42,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          registry-url: https://registry.npmjs.org/   # важно!
-          always-auth: true
       - run: corepack enable
       - run: corepack prepare yarn@4.10.3 --activate
       - run: yarn -v
@@ -54,13 +52,5 @@ jobs:
             .yarn/cache
           key: yarn-${{ hashFiles('**/yarn.lock') }}
       - run: yarn install --immutable
-
-      - name: Authenticate to npm
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
-          npm whoami || true
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
-
-      - name: Publish
-        run: yarn npm publish --access public --tolerate-republish
+      - run: yarn npm whoami || true
+      - run: yarn npm publish --access public --tolerate-republish
