@@ -21,6 +21,10 @@
     "i18next.config.json",
     "README.md"
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "scripts": {
     "test": "node -e \"console.log('No tests yet.')\"",
     "release": "node ./release.mjs"
