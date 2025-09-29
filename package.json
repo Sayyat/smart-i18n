@@ -1,6 +1,6 @@
 {
   "name": "@sayyyat/smart-i18n",
-  "version": "2.1.17",
+  "version": "2.1.18",
   "description": "Reusable Gulp-based i18n automation system for javascript/typescript projects.",
   "main": "./gulpfile.mjs",
   "type": "module",
