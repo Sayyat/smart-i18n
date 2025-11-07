@@ -13,48 +13,41 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    env:
-      NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - run: corepack enable
-      - run: corepack prepare yarn@4.10.3 --activate
-      - run: yarn -v
-      - uses: actions/cache@v4
-        with:
-          path: |
-            ~/.cache/yarn
-            .yarn/cache
-          key: yarn-${{ hashFiles('**/yarn.lock') }}
-      - run: yarn install --immutable
-      - run: yarn test
-
-  publish-npm:
-    needs: build
+  # 'build' және 'publish-npm' біріктірілді
+  build-and-publish:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: read # (Егер 'npm publish' үшін 'id: write' керек болса, осында қосыңыз)
     env:
-      NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: corepack enable
-      - run: corepack prepare yarn@4.10.3 --activate
-      - run: yarn -v
-      - uses: actions/cache@v4
+          # 'registry-url' publish үшін қажет
+          registry-url: 'https://registry.npmjs.org' 
+          
+      - name: Setup Yarn
+        run: corepack enable && corepack prepare yarn@4.10.3 --activate && yarn -v
+        
+      - name: Cache Yarn
+        uses: actions/cache@v4
         with:
           path: |
             ~/.cache/yarn
             .yarn/cache
           key: yarn-${{ hashFiles('**/yarn.lock') }}
-      - run: yarn install --immutable
-      - run: yarn npm whoami || true
-      - run: yarn npm publish --access public --tolerate-republish
+          
+      - name: Install Dependencies
+        run: yarn install --immutable
+        
+      - name: Run Tests
+        run: yarn test 
+
+      - name: Publish to NPM
+        run: yarn npm publish --access public --tolerate-republish
