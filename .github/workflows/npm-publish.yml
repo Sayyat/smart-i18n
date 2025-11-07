@@ -6,6 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
+  id-token: write
   contents: read
 
 concurrency:
@@ -19,7 +20,7 @@ jobs:
     permissions:
       contents: read # (Егер 'npm publish' үшін 'id: write' керек болса, осында қосыңыз)
     env:
-      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
       
     steps:
       - name: Checkout
