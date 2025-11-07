@@ -19,9 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read # (Егер 'npm publish' үшін 'id: write' керек болса, осында қосыңыз)
-    env:
-      NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
-      
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -46,7 +44,9 @@ jobs:
           
       - name: Install Dependencies
         run: yarn install --immutable
-        
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+      
       - name: Run Tests
         run: yarn test 
 
