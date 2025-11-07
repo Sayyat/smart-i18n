@@ -6,7 +6,6 @@ on:
   workflow_dispatch:
 
 permissions:
-  id-token: write
   contents: read
 
 concurrency:
@@ -18,7 +17,7 @@ jobs:
   build-and-publish:
     runs-on: ubuntu-latest
     permissions:
-      contents: read # (Егер 'npm publish' үшін 'id: write' керек болса, осында қосыңыз)
+      contents: read
 
     steps:
       - name: Checkout
@@ -44,11 +43,11 @@ jobs:
           
       - name: Install Dependencies
         run: yarn install --immutable
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
       
       - name: Run Tests
         run: yarn test 
 
       - name: Publish to NPM
         run: yarn npm publish --access public --tolerate-republish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
